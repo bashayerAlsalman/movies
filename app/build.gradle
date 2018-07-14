@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "net.bashayer.sa.movies"
+        minSdkVersion 23
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            jniDebuggable true
+        }
+    }
+}
+final SUPPORT_LIBRARY = '27.1.1'
+final koin_version = '0.9.3'
+final RETROFIT = '2.1.0'
+final OKHTTP = '3.5.0'
+final ROOM = '1.1.1'
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:${SUPPORT_LIBRARY}"
+    implementation "com.android.support:appcompat-v7:${SUPPORT_LIBRARY}"
+    implementation "com.android.support:design:${SUPPORT_LIBRARY}"
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //rxjava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
+    //recyclerview
+    implementation "com.android.support:recyclerview-v7:${SUPPORT_LIBRARY}"
+    //koin
+    implementation "org.koin:koin-android:${koin_version}"
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:${RETROFIT}"
+    implementation "com.squareup.retrofit2:converter-gson:${RETROFIT}"
+    implementation "com.squareup.retrofit2:converter-scalars:${RETROFIT}"
+    implementation "com.squareup.retrofit2:adapter-rxjava:${RETROFIT}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${OKHTTP}"
+    implementation "com.squareup.okhttp3:okhttp:${OKHTTP}"
+    //material dialog
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+
+    implementation 'com.novoda:merlin-rxjava2:1.0.0'
+    compile 'com.novoda:merlin:1.1.7'
+
+//Room
+    implementation "android.arch.persistence.room:runtime:${ROOM}"
+    kapt "android.arch.persistence.room:compiler:${ROOM}"
+
+}

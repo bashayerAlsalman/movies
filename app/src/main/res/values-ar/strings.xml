@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movieImage">Movie Image</string>
+    <string name="topRatedMovies">Top Rated Movies</string>
+    <string name="dummyText">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</string>
+    <string name="voting">7.48</string>
+    <string name="releaseDate">2018-01-01</string>
+    <string name="savedLocally">Movies Saved Locally !!</string>
+    <string name="loadLocal">Loadded from local storage</string>
+    <string name="loadApi">Loaded from API</string>
+</resources>
